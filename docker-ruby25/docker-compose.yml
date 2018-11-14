@@ -1,0 +1,15 @@
+version: '2'
+services:
+  ruby25:
+    build: .
+    volumes:
+      - .:/app
+      - ~/.gitconfig:/home/ruby25/.gitignore:ro
+      - ~/.ssh:/home/root/.ssh:ro
+      - ~/.bash_histories/ruby25:/home/ruby25/.bash_history
+    environment:
+      - AWS_ACCESS_KEY_ID
+      - AWS_SECRET_ACCESS_KEY
+      - AWS_DEFAULT_REGION
+      - AWS_SESSION_TOKEN
+      - AWS_SECURITY_TOKEN
